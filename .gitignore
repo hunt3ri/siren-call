@@ -4,6 +4,7 @@ logs
 
 # Buiild artifacts
 shippable/
+dist/
 
 # Python artifacts
 __pycache__

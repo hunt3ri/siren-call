@@ -16,6 +16,11 @@ def send_message():
     print(response.status_code)
 
 
+def send_message_handler(event, context):
+    # TODO handle lambda event
+    send_message()
+
+
 if __name__ == "__main__":
     load_dotenv()
     print('Sending message')

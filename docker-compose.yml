@@ -1,0 +1,16 @@
+# Docker compose file that sets up environment, creates image called siren-call
+# Maps local to app dir
+version: "3"
+
+services:
+  siren-call:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: siren_call
+    volumes:
+      - ./app:/siren-call/app
+      - ./devops:/siren-call/devops
+      - ./Pipfile:/siren-call/Pipfile
+      - ./Pipfile.lock:/siren-call/Pipfile.lock
+      - ../docker.aws:/root/.aws

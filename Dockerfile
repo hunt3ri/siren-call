@@ -9,16 +9,13 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     vim
 
-# Set python aliases for python3 and upgrade pip
+# Set python aliases for python3 and pipenv
 RUN echo 'alias python=python3' >> ~/.bashrc
 RUN echo 'alias pip=pip3' >> ~/.bashrc
 RUN echo 'export PIPENV_VENV_IN_PROJECT=true' >> ~/.bashrc
 
 
-# Install dependencies in local .venv for later deployment to S3
-#RUN export PIPENV_VENV_IN_PROJECT=true
+# Install python dependencies required for upload to S3
 RUN pip3 install pipenv
 RUN pip3 install awscli
 RUN pip3 install --upgrade pip
-#RUN cd app
-#RUN pipenv install

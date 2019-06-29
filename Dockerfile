@@ -1,4 +1,4 @@
-# Create docker container with Terraform installed, and suite of tools to ease working with AWS
+# Create docker container with dependencies for push to S3
 FROM ubuntu:19.04
 
 # Install dependencies
@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
     dos2unix \
     curl \
     git-core \
+    groff \
     python3-pip \
     vim
 

@@ -10,7 +10,7 @@ PROFILE="hunter_ops"
 printf "#####################################\n"
 printf "Iain Hunter Ops\n\n"
 
-# printf "Clean up Windows weirdness on utils ...\n\n"
+printf "Clean up Windows weirdness on utils ...\n\n"
 dos2unix  ~/.aws/credentials
 
 printf "\nSetting Tooling vars...\n"

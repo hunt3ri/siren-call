@@ -11,7 +11,7 @@ def send_message():
         raise ValueError('Web Hook Env Var not set')
 
     # Send message to slack
-    response = requests.post(web_hook, json={"text": "Hello, World 2!"})
+    response = requests.post(web_hook, json={"text": "Hello, World 3!"})
 
     print(response.status_code)
 

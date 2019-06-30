@@ -23,11 +23,9 @@ build:
         - export PIPENV_VENV_IN_PROJECT=true
         - pip install pipenv
         - pipenv install --dev
-        - pipenv shell --no-interactive
 
         # Run linter
-        - flake8 app
-        - flake8 tests
+        - pipenv run flake8 app
 
     on_success:
       # Run deploy script to manage deploy to appropriate environment

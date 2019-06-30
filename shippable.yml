@@ -27,7 +27,7 @@ build:
 
     on_success:
       # Run deploy script to manage deploy to appropriate environment
-      - python ./devops/build.py
+      - python ./devops/deploy.sh
 
 integrations:
     notifications:

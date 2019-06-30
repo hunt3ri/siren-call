@@ -44,5 +44,6 @@ if __name__ == "__main__":
     copy_app_to_build_dir()
     dist_file = build_app()
     upload_to_s3(dist_file)
-    print("To deploy...")
+    print("To deploy locally...")
     print(f"python ./devops/deploy.py {dist_file}")
+    print(dist_file)

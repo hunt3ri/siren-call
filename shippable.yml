@@ -19,13 +19,11 @@ build:
         # Install Python dependencies
         - python --version
         - pip install --upgrade pip
-        - export PIPENV_IGNORE_VIRTUALENVS=1
-        - export PIPENV_VENV_IN_PROJECT=true
         - pip install pipenv
         - pipenv install --dev
 
         # Run linter
-        - pipenv run flake8 app
+        - flake8 app
 
     on_success:
       # Run deploy script to manage deploy to appropriate environment

@@ -16,6 +16,7 @@ if [ $BRANCH == "add-logging" ]
          export PIPENV_VENV_IN_PROJECT=true
          pipenv install
          DIST_FILE=`python ./devops/build.py`
+         echo $DIST_FILE
          python ./devops/deploy.py $DIST_FILE
 fi
 

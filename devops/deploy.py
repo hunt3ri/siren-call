@@ -5,6 +5,7 @@ import sys
 
 def deploy_lambda_function(app_archive):
     """ Use AWS CLI to deploy"""
+    print(f"Deploying: {app_archive}")
     subprocess.run(
         [
             "aws",

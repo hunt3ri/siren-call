@@ -16,8 +16,7 @@ if [ $BRANCH == "add-logging" ]
          export PIPENV_VENV_IN_PROJECT=true
          pipenv install
          DIST_FILE=`python ./devops/build.py`
-         aws lambda update-function-code --function-name siren-call --s3-bucket code-commit-build-artifacts --s3-key siren-call/$DIST_FILE --publish
-         aws help
+         python ./devops/deploy.py $DIST_FILE
 fi
 
 # Only deploy to Prod if we're on master

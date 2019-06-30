@@ -5,7 +5,20 @@ import sys
 
 def deploy_lambda_function(app_archive):
     """ Use AWS CLI to deploy"""
-    subprocess.run(["aws", "lambda", "update-function-code", "--function-name", "siren-call", "--s3-bucket", "code-commit-build-artifacts", "--s3-key", f"siren-call/{app_archive}", "--publish"])
+    subprocess.run(
+        [
+            "aws",
+            "lambda",
+            "update-function-code",
+            "--function-name",
+            "siren-call",
+            "--s3-bucket",
+            "code-commit-build-artifacts",
+            "--s3-key",
+            f"siren-call/{app_archive}",
+            "--publish",
+        ]
+    )
 
 
 if __name__ == "__main__":

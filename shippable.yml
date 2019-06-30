@@ -1,0 +1,38 @@
+# language setting
+language: python
+
+# version numbers test
+python:
+    - "3.7"
+
+env:
+    global:
+        - secure: XCx+OCH8AwpoFfZDvgEsL1SDwSBQ9t8BKq9vWjeewT3PM5CeUA4Nkne0gWHhyqGYt1nf+by0Jam6ygaVUzJAB5Sf/3RlyA5GZMaD21ZxsfpL3gHN588c3ndKOp6Byr6BZV02i0DnR2oLc+vFSmrv9h6enJsTzYKwAPbWoT3cPBQVew7SNwcqFKFIErcEdm9DciR18fTfeZpyRmG7/azqO++dCM6tJJSHdaeZ0+jJsOv1OMjJXJciKqkIvo150vSkIZS6ZRgXe0J99qrF8SJz4AjifYN2q+Vj4gAp1CxjJ3uTZi7kRwtpedmYC7lQfwpBwllsLBUIOoe9qyTb3Q36nQ==
+
+
+build:
+    ci:
+        # Required to display test results in Shippable GUI
+        - mkdir -p shippable/testresults
+        - mkdir -p shippable/codecoverage
+
+        # Install Python dependencies
+        - python --version
+        - pip install --upgrade pip
+        - pip install pipenv
+        - pipenv install --dev
+
+        # Run linter
+        - flake8 app
+        - flake8 tests
+
+    on_success:
+      # Run deploy script to manage deploy to appropriate environment
+      - python ./devops/build.py
+
+integrations:
+    notifications:
+        - integrationName: email
+          type: email
+          recipients:
+            - iain.hunter@outlook.com

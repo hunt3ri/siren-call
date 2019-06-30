@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-#!/usr/bin/env bash
 echo Running shippable deploy current branch is $BRANCH
 
 # We don't want to deploy Pull Requests only builds on develop and master

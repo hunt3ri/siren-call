@@ -23,7 +23,7 @@ build:
         - export PIPENV_VENV_IN_PROJECT=true
         - pip install pipenv
         - pipenv install --dev
-        - pipenv shell
+        - pipenv shell --no-interactive
 
         # Run linter
         - flake8 app

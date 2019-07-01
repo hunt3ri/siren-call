@@ -10,12 +10,13 @@ if [ $IS_PULL_REQUEST == true ]
 fi
 
 # Only deploy to Staging if we're on develop
-if [ $BRANCH == "add-logging" ]
+if [ $BRANCH == "develop" ]
     then
-         export PIPENV_IGNORE_VIRTUALENVS=1
-         export PIPENV_VENV_IN_PROJECT=true
-         pipenv install
-         python ./devops/deploy.py --deploy
+        # Create a local venv using app only dependencies this will create a smaller deployable
+        export PIPENV_IGNORE_VIRTUALENVS=1
+        export PIPENV_VENV_IN_PROJECT=true
+        pipenv install
+        python ./devops/deploy.py --deploy
 fi
 
 # Only deploy to Prod if we're on master

@@ -67,6 +67,3 @@ if __name__ == "__main__":
     dist_file = build_app()
     upload_to_s3(dist_file)
     deploy_lambda()
-    print("To deploy locally...")
-    print(f"python ./devops/deploy.py {dist_file}")
-    print(dist_file)

@@ -15,9 +15,7 @@ if [ $BRANCH == "add-logging" ]
          export PIPENV_IGNORE_VIRTUALENVS=1
          export PIPENV_VENV_IN_PROJECT=true
          pipenv install
-         DIST_FILE=`./devops/build.py`
-         echo DISTFILE: $DIST_FILE
-         python ./devops/deploy.py $DIST_FILE
+         python ./devops/deploy.py --deploy
 fi
 
 # Only deploy to Prod if we're on master

@@ -25,6 +25,8 @@ build:
         # Run linter
         - flake8 app
 
+        # TODO add tests
+
     on_success:
       # Run deploy script to manage deploy to appropriate environment
       - . ./devops/deploy.sh

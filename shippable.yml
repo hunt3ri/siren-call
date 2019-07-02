@@ -24,8 +24,10 @@ build:
 
         # Run linter
         - flake8 app
+        - flake8 tests
 
-        # TODO add tests
+        # Run Python tests
+        - pytest ./tests --junitxml=./shippable/testresults/siren_call.xml --cov=app --cov-report xml:./shippable/codecoverage/coverage.xml
 
     on_success:
       # Run deploy script to manage deploy to appropriate environment

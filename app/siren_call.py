@@ -18,7 +18,10 @@ def send_slack_message(project: str, status: str):
 
     # Send message to slack
     response = requests.post(
-        web_hook, json={"text": f"Project {project} has status {status}"}
+        web_hook,
+        json={
+            "text": f"Hey <!channel> Building project *{project}* status is *{status}* :smile:"
+        },
     )
 
     print(response.status_code)

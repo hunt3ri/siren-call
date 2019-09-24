@@ -34,7 +34,7 @@ def build_app() -> str:
 
 def upload_to_s3(dist_file: str):
     """ Upload to deployable to s3 """
-    s3_dest = f"s3://code-commit-build-artifacts/siren-call/{dist_file}"
+    s3_dest = f"s3://hunter-labs-build-artifacts/siren-call/{dist_file}"
     print(f"Uploading {dist_file} to {s3_dest}")
     subprocess.run(["aws", "s3", "mv", f"dist/{dist_file}", s3_dest])
 

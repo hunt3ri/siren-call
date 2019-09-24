@@ -5,8 +5,8 @@ Simple app to call Slack web hook with build notifications.  Deployed as AWS Lam
 To install the required dependencies:
 ```.bash
 pip install pipenv
-pipenv install --dev
 pipenv shell
+pipenv install --dev
 pre-commit install
 ```
 Note the app uses [pre-commit](https://pre-commit.com/) to ensure we automatically run the [black](https://black.readthedocs.io/en/stable/) code formatter and [flake8](http://flake8.pycqa.org/en/latest/) linter before each commit 
@@ -21,9 +21,10 @@ cd siren-call
 ```
 
 ### Build and deploy
-You can build and deploy locally as follows:
+You can build and deploy locally as follows, from within docker container:
 ```bash
 . ./devops/setenv.sh
-python ./devops/build.py
+pipenv shell
+pipenv install --dev
 python ./devops/deploy.py <archive.zip>
 ```
